@@ -2,14 +2,18 @@
 
 ## What is react?
 
-React is a declarative, efficient, and flexible JavaScript library for building user interfaces.
+React is a declarative, efficient, and flexible JavaScript library for building user interfaces. React lets you define components as classes or functions.
 
 ## Component
 
+To define a React component class, you need to extend `React.Component`
+
 - Components are mix of XML tags and JS. 
 - React lets you compose complex UIs from small and isolated pieces of code called `components`.
+- A component takes in parameters, called props (short for “properties”), and returns a hierarchy of views to display via the render method.
+- The only method you must define in a `React.Component` subclass is called `render()`
 
-### Example
+### Example: Component - `ShoppingList` 
 
 ```js
 class ShoppingList extends React.Component {
@@ -26,11 +30,29 @@ class ShoppingList extends React.Component {
 }
 ```
 
-# Day - 1
+The render method returns a description of what you want to see on the screen. The render returns a React element, which is a lightweight description of what to render. 
+
+> __**Note:**__ Code written with JSX will be converted to use React.createElement().
+
+### Lifecycle of a component
+
+Each component has several `lifecycle methods` that you can override to run code at [particular times](https://reactjs.org/docs/react-component.html) in the process.
+
+![](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+
+### State
+
+Every React component has a state. React components can have state by setting `this.state` in their constructors. `this.state` should be considered as private to a React component that it's defined in.
+
+Important thing to remember about state and constructors is - __If you don't initialize state and you don't bind methods, you don't need to implement a constructor for your React component.__
+
+To collect data from multiple children, or to have two child components communicate with each other, you need to declare the shared state in their parent component. 
+
+## Day - 1
 
 I am going to refer the [Reference URL](https://reactjs.org/tutorial/tutorial.html) for all the source files I willl create and log my own experience in doing so.
 
-## Option - 2 
+### Option - 2 
 
 I will be using the [option-2](https://reactjs.org/tutorial/tutorial.html#setup-option-2-local-development-environment) setting up a local dev environment.
 
@@ -75,7 +97,7 @@ BuildVersion:           22C65
 }
 ```
 
-### Place holder APP
+#### Place holder APP
 
 - Use `create-react-app` command to create the source files
 
@@ -114,7 +136,7 @@ Options:
       https://github.com/facebook/create-react-app/issues/new
 ```
 
-#### Step - 1 `npx create-react-app .`
+##### Step - 1 `npx create-react-app .`
 
 It will show progress like below 
 
@@ -197,14 +219,14 @@ Happy hacking!
 ```
 
 
-#### Step - 2 `rm -rf ./src/*`
+##### Step - 2 `rm -rf ./src/*`
 
 ```bash
 rm -rf src/*
 zsh: sure you want to delete all 8 files in /Users/samarthya/sourcebox/github.com/tic-tac-toe/src [yn]? y
 ```
 
-#### Step - 3
+##### Step - 3
 
 Add a `index.js` & `index.css` in `src/`
 
@@ -212,7 +234,7 @@ Add a `index.js` & `index.css` in `src/`
 touch src/index.js src/index.css
 ```
 
-#### Step - 4
+##### Step - 4
 
 Publish the `index.js` as under
 
@@ -226,3 +248,8 @@ import './index.css';
 
 __**Note**:__ Ignore the ESList warnings that you see on the console. They are expected.
 
+Your basic application structure has been defined now it is time for building the application one component at a time.
+
+## Building Application
+
+Read how the application code is added step by step in the guider [here](./APP.md)
