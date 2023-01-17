@@ -2,6 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
+/**
+ * Defines an individual square on the board
+ * @param {*} props 
+ * @returns 
+ */
 function Square(props) {
     return (
         <button className="square"
@@ -11,6 +16,11 @@ function Square(props) {
     );
 }
 
+/**
+ * Claculates if anyone has won the game.
+ * @param {*} squares 
+ * @returns 
+ */
 function calculateWinner(squares) {
     const lines = [
         [0, 1, 2],
@@ -33,6 +43,9 @@ function calculateWinner(squares) {
     return null;
 }
 
+/**
+ * Representation of the board
+ */
 class Board extends React.Component {
     constructor(props) {
         super(props);
@@ -68,7 +81,6 @@ class Board extends React.Component {
 
 
     render() {
-
         const winner = calculateWinner(this.state.squares);
 
         let status;
@@ -81,6 +93,7 @@ class Board extends React.Component {
 
         return (
             <div>
+                <div class="pinkie-welcome">Welcome to the game of Pinkie-Pie Tic-Tac-Toe</div>
                 <div className="status">{status}</div>
                 <div className="board-row">
                     {this.renderSquare(0)}

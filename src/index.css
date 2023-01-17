@@ -3,6 +3,12 @@ body {
     margin: 20px;
 }
 
+.pinkie-welcome {
+    text-shadow: #999;
+    height: 50px;
+    font: 20px "Trebuchet MS", sans-serif;
+}
+
 ol,
 ul {
     padding-left: 30px;
