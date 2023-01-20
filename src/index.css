@@ -3,10 +3,16 @@ body {
     margin: 20px;
 }
 
+.box {
+    border: 1px black;
+    font-weight: bold;
+}
+
 .pinkie-welcome {
+    text-transform: uppercase;
     text-shadow: #999;
     height: 50px;
-    font: 20px "Trebuchet MS", sans-serif;
+    font: 2rem "Trebuchet MS", sans-serif;
 }
 
 ol,
